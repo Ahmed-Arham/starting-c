@@ -1,0 +1,114 @@
+1) Find the Largest Element in an Array
+
+#include <stdio.h>
+
+int main() {
+    int arr[] = {10, 20, 35, 5, 45, 25};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int max = arr[0];
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+
+    printf("The largest element in the array is: %d\n", max);
+    return 0;
+}
+
+
+2) Calculate the Sum and Average of an Array
+
+#include <stdio.h>
+
+int main() {
+    int arr[] = {15, 25, 35, 45, 55};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int sum = 0;
+    double average;
+
+    for (int i = 0; i < n; i++) {
+        sum += arr[i];
+    }
+
+    average = (double)sum / n;
+    printf("Sum: %d\n", sum);
+    printf("Average: %.2lf\n", average);
+    return 0;
+}
+
+
+3) Reverse an Array
+
+#include <stdio.h>
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Original Array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    printf("\nReversed Array: ");
+    for (int i = n - 1; i >= 0; i--) {
+        printf("%d ", arr[i]);
+    }
+
+    printf("\n");
+    return 0;
+}
+
+
+4) Count Even and Odd Numbers in an Array
+
+#include <stdio.h>
+
+int main() {
+    int arr[] = {10, 15, 20, 25, 30, 35};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int evenCount = 0, oddCount = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (arr[i] % 2 == 0) {
+            evenCount++;
+        } else {
+            oddCount++;
+        }
+    }
+
+    printf("Even numbers: %d\n", evenCount);
+    printf("Odd numbers: %d\n", oddCount);
+    return 0;
+}
+
+
+5) Sort an Array in Ascending Order
+
+#include <stdio.h>
+
+int main() {
+    int arr[] = {40, 10, 20, 50, 30};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Swap elements
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("Sorted Array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    printf("\n");
+    return 0;
+}
