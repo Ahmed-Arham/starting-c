@@ -1,0 +1,203 @@
+1) calculator
+
+#include <stdio.h>
+#include<conio.h>
+
+int main() {
+    char operator;
+    double num1, num2, result;
+
+    // Display instructions for the user
+    printf("Simple Calculator\n");
+    printf("------------------\n");
+    printf("Enter an operator (+, -, *, /): ");
+    scanf(" %c", &operator); // Notice the space before %c to handle any leftover newline character
+
+    // Input two numbers
+    printf("Enter two numbers separated by a space: ");
+    scanf("%lf %lf", &num1, &num2);
+
+    // Switch case for performing operations
+    switch (operator) {
+        case '+':
+            result = num1 + num2;
+            printf("%.2lf + %.2lf = %.2lf\n", num1, num2, result);
+            break;
+        case '-':
+            result = num1 - num2;
+            printf("%.2lf - %.2lf = %.2lf\n", num1, num2, result);
+            break;
+        case '*':
+            result = num1 * num2;
+            printf("%.2lf * %.2lf = %.2lf\n", num1, num2, result);
+            break;
+        case '/':
+            if (num2 != 0) {
+                result = num1 / num2;
+                printf("%.2lf / %.2lf = %.2lf\n", num1, num2, result);
+            } else {
+                printf("Error! Division by zero is not allowed.\n");
+            }
+            break;
+        default:
+            printf("Invalid operator! Please use one of the following: +, -, *, /.\n");
+    }
+
+    return 0;
+}
+
+2) DAY OF THE WEEK
+
+#include <stdio.h>
+
+int main() {
+    int day;
+
+    printf("Enter a number (1-7): ");
+    scanf("%d", &day);
+
+    switch (day) {
+        case 1:
+            printf("Monday\n");
+            break;
+        case 2:
+            printf("Tuesday\n");
+            break;
+        case 3:
+            printf("Wednesday\n");
+            break;
+        case 4:
+            printf("Thursday\n");
+            break;
+        case 5:
+            printf("Friday\n");
+            break;
+        case 6:
+            printf("Saturday\n");
+            break;
+        case 7:
+            printf("Sunday\n");
+            break;
+        default:
+            printf("Invalid input! Please enter a number between 1 and 7.\n");
+    }
+
+    return 0;
+}
+
+3) Arithmetic Operations (Menu-Based) 
+
+ #include <stdio.h>
+
+int main() {
+    int choice;
+    double num1, num2, result;
+
+    printf("Arithmetic Operations Menu\n");
+    printf("1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n");
+    printf("Enter your choice (1-4): ");
+    scanf("%d", &choice);
+
+    printf("Enter two numbers: ");
+    scanf("%lf %lf", &num1, &num2);
+
+    switch (choice) {
+        case 1:
+            result = num1 + num2;
+            printf("Result: %.2lf\n", result);
+            break;
+        case 2:
+            result = num1 - num2;
+            printf("Result: %.2lf\n", result);
+            break;
+        case 3:
+            result = num1 * num2;
+            printf("Result: %.2lf\n", result);
+            break;
+        case 4:
+            if (num2 != 0) {
+                result = num1 / num2;
+                printf("Result: %.2lf\n", result);
+            } else {
+                printf("Error! Division by zero is not allowed.\n");
+            }
+            break;
+        default:
+            printf("Invalid choice! Please select between 1 and 4.\n");
+    }
+
+    return 0;
+}
+
+4) Calculator for Area Calculation
+
+ #include <stdio.h>
+#include <math.h>
+
+int main() {
+    int choice;
+    double area, radius, length, breadth, base, height;
+
+    printf("Area Calculation Menu\n");
+    printf("1. Circle\n2. Rectangle\n3. Triangle\n");
+    printf("Enter your choice (1-3): ");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            printf("Enter the radius of the circle: ");
+            scanf("%lf", &radius);
+            area = M_PI * radius * radius; // M_PI is the value of pi
+            printf("Area of the circle: %.2lf\n", area);
+            break;
+        case 2:
+            printf("Enter the length and breadth of the rectangle: ");
+            scanf("%lf %lf", &length, &breadth);
+            area = length * breadth;
+            printf("Area of the rectangle: %.2lf\n", area);
+            break;
+        case 3:
+            printf("Enter the base and height of the triangle: ");
+            scanf("%lf %lf", &base, &height);
+            area = 0.5 * base * height;
+            printf("Area of the triangle: %.2lf\n", area);
+            break;
+        default:
+            printf("Invalid choice! Please select between 1 and 3.\n");
+    }
+
+    return 0;
+}
+
+5) Grade Evaluation
+
+#include <stdio.h>
+
+int main() {
+    char grade;
+
+    printf("Enter your grade (A, B, C, D, F): ");
+    scanf(" %c", &grade); // Note the space before %c
+
+    switch (grade) {
+        case 'A':
+            printf("Excellent! Keep it up.\n");
+            break;
+        case 'B':
+            printf("Good job! Aim for an A next time.\n");
+            break;
+        case 'C':
+            printf("Fair effort, but there is room for improvement.\n");
+            break;
+        case 'D':
+            printf("You passed, but work harder.\n");
+            break;
+        case 'F':
+            printf("Failed. Don't give up, try again!\n");
+            break;
+        default:
+            printf("Invalid grade! Please enter A, B, C, D, or F.\n");
+    }
+
+    return 0;
+}
